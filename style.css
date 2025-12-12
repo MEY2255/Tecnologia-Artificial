@@ -1,0 +1,400 @@
+/* Define una fuente futurista o tecnológica y fondo oscuro */
+body {
+    /* Fondo azul profundo/negro para una sensación tecnológica */
+    background-color: #0d1a26; 
+    color: #00e0ff; /* Color de texto azul brillante (cian) */
+    font-family: 'Consolas', 'Courier New', monospace; /* Fuente de estilo código/tech */
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    /* Efecto de 'neblina' suave en los bordes para un look futurista */
+    box-shadow: inset 0 0 50px rgba(0, 224, 255, 0.1); 
+}
+
+/* ================================================= */
+/* === VIDEO DE FONDO DINÁMICO (Clase para todas las páginas) === */
+/* ================================================= */
+
+.video-fondo {
+    /* Posicionamiento y capa */
+    position: fixed; /* Mantiene el video fijo aunque hagas scroll */
+    top: 0;
+    left: 0;
+    z-index: -100; /* Lo envía al fondo, detrás de todo el contenido */
+    
+    /* Cobertura total de la pantalla */
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    
+    /* Asegura que el video cubra el área sin distorsionarse */
+    object-fit: cover; 
+    
+    /* Efecto de superposición oscura/neblina para legibilidad */
+    background: rgba(0, 0, 0, 0.7); 
+}
+
+/* Opcional: Capa semitransparente sobre el video para mejorar la legibilidad
+   Esta regla debe quedarse como está para funcionar en todas las páginas */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 26, 51, 0.5); /* Capa azul oscuro semi-transparente */
+    z-index: -50; /* Debe estar por encima del video pero debajo del contenido */
+}
+
+
+
+/* Título principal con efecto de 'neón' */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #33ccff; /* Azul neón brillante */
+    text-shadow: 
+        0 0 7px rgba(51, 204, 255, 0.7),
+        0 0 10px rgba(51, 204, 255, 0.5),
+        0 0 21px rgba(51, 204, 255, 0.3); /* Múltiples sombras para el efecto neón */
+    padding-bottom: 20px;
+    border-bottom: 2px solid #00e0ff; /* Línea separadora brillante */
+    letter-spacing: 5px; /* Espaciado para un look más estilizado */
+    animation: neon-glow 1.5s ease-in-out infinite alternate; /* Animación sutil */
+}
+
+/* Animación Neón para el H1 */
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff;
+    }
+    to {
+        text-shadow: 0 0 10px #33ccff, 0 0 20px #33ccff, 0 0 30px #00e0ff;
+    }
+}
+
+/* ================================================= */
+/* === 2. Contenido e Interactividad (Cards/Menú) === */
+/* ================================================= */
+
+/* Contenedor del texto (simulando una 'ventana' de datos) */
+.menu-item {
+    background-color: rgba(2, 34, 54, 0.4); /* Fondo semi-transparente oscuro */
+    border: 1px solid #00aaff; /* Borde sutil azul claro */
+    border-radius: 10px; /* Esquinas ligeramente redondeadas */
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.5); /* Sombra exterior azul brillante */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto de 'hover' interactivo al pasar el mouse */
+.menu-item:hover {
+    transform: translateY(-5px); /* Se eleva un poco */
+    box-shadow: 0 10px 30px rgba(51, 204, 255, 0.8), 0 0 50px rgba(51, 204, 255, 0.5); /* Sombra más intensa */
+}
+
+/* Estilo para los párrafos dentro de la 'ventana' */
+.menu-item p {
+    color: #aaffff; /* Un tono de azul más suave para la lectura */
+    text-align: justify;
+}
+
+/* ================================================= */
+/* === 3. Tabla y Enlaces (Interfaz de Datos) === */
+/* ================================================= */
+
+/* Estilo de la tabla de 'datos' */
+table {
+    width: 90%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: rgba(0, 50, 80, 0.3);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+    
+    /* === Fuerza el diseño de tabla fijo === */
+    table-layout: fixed; 
+}
+
+/* Estilo para los encabezados de la tabla (TH) */
+th {
+    background-color: #0e68a8; /* Fondo de encabezado azul oscuro */
+    color: #ffffff;
+    padding: 15px;
+    border: 1px solid #33ccff; /* Borde brillante */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilo para las celdas de la tabla (TD) */
+td {
+    border: 1px solid #004488; /* Borde más oscuro */
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 30, 60, 0.6);
+}
+
+/* Estilo para los enlaces de la tabla (donde están las imágenes) */
+table a {
+    display: block; /* Hace que el enlace ocupe todo el espacio de la celda */
+    transition: all 0.3s ease;
+    border: 3px solid transparent; /* Inicialmente transparente */
+}
+
+/* Efecto de 'hover' en los enlaces de la tabla */
+table a:hover {
+    border: 3px solid #e0de3a; /* Borde rosa/magenta (contraste ciberpunk) */
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+
+/* Nuevas reglas o reemplaza la anterior regla 'img' si ya existe */
+
+/* Estilo para TODAS las imágenes dentro de las celdas de la tabla */
+table td img {
+    /* Define un tamaño fijo para todas las imágenes de los temas */
+    width: 300px; /* Ancho fijo */
+    height: 300px; /* Altura fija (para que sean perfectamente cuadradas) */
+    
+    /* Asegura que la imagen cubra el espacio sin distorsionarse, recortando si es necesario */
+    object-fit: cover; 
+    
+    /* Centra la imagen si el contenedor es más grande */
+    display: block; 
+    margin: 0 auto;
+    
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(51, 204, 255, 0.7); 
+    transition: transform 0.3s;
+}
+
+/* Efecto de hover mejorado para las imágenes de la tabla */
+table td a:hover img {
+    transform: scale(0.98); /* Ligera reducción al hacer hover, como si se pulsara */
+    box-shadow: 0 0 20px #d8f006; /* Cambio de color de sombra al interactuar */
+}
+
+/* Imágenes: asegúrate de que no desborden y tengan bordes tecnológicos */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Bordes suaves */
+    /* Asegura que la imagen tenga el tamaño definido en el HTML, pero con un toque CSS */
+    box-shadow: 0 0 10px rgba(51, 204, 255, 0.7); 
+}
+
+/* Ajuste específico para la imagen principal centrada */
+center img {
+    margin-bottom: 20px;
+    border: 2px solid #00e0ff; /* Borde azul brillante para destacarla */
+    border-radius: 50%; /* Opcional: para un look de 'avatar' o 'núcleo' */
+    box-shadow: 0 0 30px rgba(51, 204, 255, 0.9);
+}
+
+
+/* ================================================= */
+/* === ESTILO ESPECÍFICO PARA PÁGINAS DE CONTENIDO (temas) === */
+/* ================================================= */
+
+.contenido-archivo {
+    /* Mismo estilo de 'ventana' que la página principal, pero más grande */
+    background-color: rgba(2, 34, 54, 0.4); /* Fondo semi-transparente oscuro */
+    border: 1px solid #00aaff; /* Borde sutil azul claro */
+    border-radius: 5px; /* Bordes ligeramente angulares para look tech */
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1000px;
+    
+    /* Sombra exterior futurista */
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.6); 
+    
+    /* Efecto de terminal con líneas */
+    background-image: linear-gradient(rgba(0, 224, 255, 0.08) 1px, transparent 1px);
+    background-size: 100% 1.6em; /* 1.6em es el line-height del body */
+}
+
+.contenido-archivo p {
+    color: #aaffff; /* Tono suave de cian para lectura */
+    font-size: 1.1em;
+    text-align: justify;
+    
+    /* Pequeño efecto de resplandor para el texto */
+    text-shadow: 0 0 1px #00e0ff; 
+}
+
+/* Estilo para simular la lista de Usos y Aplicaciones Clave */
+.contenido-archivo p strong {
+    color: #b32e0d; /* Color magenta para destacar los puntos clave (contraste ciberpunk) */
+    font-weight: bold;
+    display: block; /* Asegura que el punto clave esté en una línea separada */
+    margin-top: 10px;
+}
+
+
+.lista-ia {
+    list-style: none; /* Elimina las viñetas predeterminadas */
+    padding-left: 0;
+}
+
+.lista-ia li {
+    margin-bottom: 15px;
+    border-left: 3px solid #33ccff; /* Línea vertical como indicador de terminal */
+    padding-left: 15px;
+    transition: all 0.2s;
+}
+
+/* Efecto hover: simula que el registro de datos se activa */
+.lista-ia li:hover {
+    background-color: rgba(51, 204, 255, 0.1); /* Resplandor al pasar el cursor */
+    border-left: 3px solid #e0ee1a; /* Cambio de color de la línea */
+    transform: translateX(5px); /* Pequeño desplazamiento */
+}
+
+.lista-ia li strong {
+    color: #00e0ff; /* Color cian para los títulos de la lista */
+    font-size: 1.1em;
+}
+
+
+/* ================================================= */
+/* === VARIANTE DE DISEÑO: CONTRASTE VERDE/LIMA === */
+/* ================================================= */
+
+/* Define un color de acento  */
+.contraste-verde {
+    --color-acento: #66ff66; 
+}
+
+/* Modifica la apariencia de la lista para usar el nuevo color de contraste */
+.contraste-verde .lista-ia li {
+    /* Mantiene la misma estructura de borde vertical */
+    border-left: 3px solid var(--color-acento); 
+}
+
+/* Modifica el efecto hover: Simula la activación/escaneo en color verde */
+.contraste-verde .lista-ia li:hover {
+    background-color: rgba(102, 255, 102, 0.1); /* Resplandor verde suave */
+    border-left: 3px solid #00e0ff; /* Opción: mantener el borde principal azul */
+    transform: translateX(5px);
+}
+
+/* Cambia el color de los títulos/puntos clave a verde */
+.contraste-verde .lista-ia li strong {
+    color: var(--color-acento); /* color para el título del punto */
+}
+
+/* Modifica el borde de la ventana de contenido */
+.contraste-verde.contenido-archivo {
+    border: 1px solid var(--color-acento); 
+    box-shadow: 0 0 20px rgba(102, 255, 102, 0.8); /* Sombra exterior  */
+}
+
+/* ================================================= */
+/* === VARIANTE DE DISEÑO: CONTRASTE ROJO/RIESGO === */
+/* ================================================= */
+
+/* Define un color de acento rojo brillante (advertencia/riesgo) */
+.contraste-rojo {
+    --color-acento: #ff3366; /* Rojo/Rosa Neón (peligro/advertencia) */
+}
+
+/* Modifica el borde de la ventana de contenido */
+.contraste-rojo.contenido-archivo {
+    border: 1px solid var(--color-acento); 
+    /* La sombra es más intensa para el tema de riesgo */
+    box-shadow: 0 0 25px rgba(255, 51, 102, 0.9); 
+}
+
+/* Modifica la apariencia de la lista para usar el nuevo color de contraste */
+.contraste-rojo .lista-ia li {
+    border-left: 3px solid var(--color-acento); 
+}
+
+/* Modifica el efecto hover: Simula una alerta en color rojo */
+.contraste-rojo .lista-ia li:hover {
+    background-color: rgba(255, 51, 102, 0.15); /* Resplandor rojo suave */
+    border-left: 3px solid #00e0ff;
+    transform: translateX(5px);
+}
+
+/* Cambia el color de los títulos/puntos clave a rojo */
+.contraste-rojo .lista-ia li strong {
+    color: var(--color-acento); 
+}
+
+
+.barra-navegacion {
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0;
+    left: 0;
+    width: 95%;
+    
+    /* Le da una ligera profundidad sobre la capa oscura del video */
+    z-index: 100; 
+    
+    /* Fondo semi-transparente para ver un poco del video detrás */
+    background-color: rgba(13, 26, 38, 0.8); 
+    
+    display: flex; /* Para alinear el logo y el menú */
+    justify-content: space-between; /* Espacia el logo del menú */
+    align-items: center;
+    padding: 15px 40px;
+    
+    /* Borde inferior brillante como una línea de interfaz */
+    border-bottom: 2px solid #00e0ff;
+    box-shadow: 0 5px 20px rgba(0, 224, 255, 0.4);
+}
+
+/* Estilo para el título/logo de la barra */
+.logo {
+    color: #33ccff; /* Color neón */
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #33ccff;
+}
+
+/* Contenedor de la lista de enlaces */
+.menu-principal {
+    list-style: none; /* Elimina las viñetas */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinea los elementos horizontalmente */
+}
+
+/* Elementos de la lista */
+.menu-principal li {
+    margin-left: 25px;
+}
+
+/* Estilo base de los enlaces */
+.menu-principal a {
+    text-decoration: none;
+    color: #00e0ff; /* Cian/azul neón */
+    font-size: 1.1em;
+    padding: 8px 15px;
+    
+    /* Transiciones suaves para los efectos */
+    transition: all 0.3s ease; 
+    border-radius: 3px;
+    border: 1px solid transparent; /* Borde inicial invisible */
+}
+
+/* Efecto Hover Futurista */
+.menu-principal a:hover {
+    color: #ffffff; /* Texto blanco brillante al pasar */
+    background-color: rgba(51, 204, 255, 0.15); /* Fondo azul semi-transparente */
+    border: 1px solid #ff00ff; /* Borde de contraste (magenta) */
+    text-shadow: 0 0 10px #00e0ff; /* Resplandor al pasar */
+    transform: scale(1.05);
+}
+
+/* Ajuste necesario para evitar que el contenido se oculte bajo la barra fija */
+body {
+    /* Añade padding superior igual o ligeramente mayor a la altura de la barra */
+    padding-top: 80px; 
+}
